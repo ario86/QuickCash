@@ -90,13 +90,14 @@ if __name__=="__main__":
             admin_login()
             
         elif x=="6":
+            print("Thank you for using QuickCash ☺")
             break
         
         else:
             print("Please enter corrct number" )
             
             
-    print("Thank you for using QuickCash ☺")
+    
             
 
         
