@@ -1,1 +1,1 @@
-# Wallet app created using concepts of Python
+# e-wallet based created using core concepts of Python
