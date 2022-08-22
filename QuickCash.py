@@ -36,8 +36,9 @@ def user_login(e, p):
         print("Invalid credentials.")
 
 
-def mobile_recharge(char=None):
+def mobile_recharge():
     global p_b
+    char='a'
     b = int(input("select recharge plan    149,251,399,499,681: "))
     p_b += b
     mob_num=input("Enter 10 digit mobile no: ")
