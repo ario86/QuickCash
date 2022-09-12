@@ -20,21 +20,24 @@ def view_wallet():
     print("the wallet amount: ", wallet)
 
 
-def user_reg(new_email, new_password):
-    new_email = input("enter email: ")
-    new_password = input("enter password: ")
-    print("!successfully registered!")
+def user_reg(self, email, password):
+    
+    self.email=email
+    self.password=password
+    self.admin_details={'email': self.email, 'Password':self.password}
+    print('\n!Registration Successful!\n')
+   
+    
 
-
-def user_login(e, p):
-    global email
-    global password
-
-    if (e == email) and (p == password):
-        print("!log in successful!")
+def user_login(self, email, password):
+    if len(self.user_details)!=0:
+        if email== self.admin_details['email'] and password==self.admin_details['Password']:
+            print('\n!Successful Login !')
+            
+        else:
+            print('\nInvalid Credentials\n')
     else:
-        print("Invalid credentials.")
-
+        print('\nInvalid Credentials\n')
 
 def mobile_recharge():
     global p_b
@@ -66,7 +69,7 @@ while True:
         print("press x to quit")
         if choose == "x":
             print("thankyou for using QuickCash")
-        print("press c to continue")
+        print("\npress c to continue\n")
 
 
 
@@ -76,45 +79,45 @@ while True:
         add_money(x)
         print("press x to quit")
         if choose == "x":
-            print("thankyou for using QuickCash")
-        print("press c to continue")
+            print("\nthankyou for using QuickCash")
+        print("\npress c to continue\n")
 
     elif choose == 2:
-        user_reg()
+        user_reg(email, password)
         print("press x to quit")
         if choose == "x":
-            print("thankyou for using QuickCash")
-        print("press c to continue")
+            print("\nthankyou for using QuickCash\n")
+        print("\npress c to continue\n")
 
 
     elif choose == 3:
-        email1 = input("enter email: ")
-        password1 = input("enter password: ")
-        user_login(email1, password1)
-        print("press x to quit or c to continue")
+        email = input("enter email: ")
+        password = input("enter password: ")
+        user_login(email, password)
+        print("\npress x to quit or c to continue\n")
 
         if choose == "c":
             print("press c to continue")
         elif choose == "x":
-            print("thankyou for using QuickCash")
+            print("\nthankyou for using QuickCash\n")
             break
 
 
     elif choose == 4:
         view_wallet()
-        print("press c to continue")
+        print("\npress c to continue")
 
     elif choose == 5:
         view_pack_bal()
-        print("press c to continue")
+        print("\npress c to continue")
 
     elif choose == 6:
-        print("thankyou for using QuickCash")
+        print("\nthankyou for using QuickCash\n")
         break
 
 
     else:
-        print("invalid option")
+        print("\ninvalid option")
 
     choose2 = input()
 
@@ -122,8 +125,8 @@ while True:
         continue
 
     elif choose2 == "x":
-        print("thankyou for using QuickCash")
+        print("thankyou for using QuickCash\n")
         break
 
     else:
-        print("Invalid option")
+        print("\nInvalid option")
